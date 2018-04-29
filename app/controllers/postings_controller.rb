@@ -41,10 +41,10 @@ class PostingsController < ApplicationController
     if qualification_array.length > 0
       @html += qualifications
     end
-    @html += "<p>Please apply with your resume and profile via #{@posting.company_name} <b><i><br>"
+    @html += "<p>Please apply with your resume and profile via EightSix Network's <b><i><br>"
     @html += "one minute online application</i></b> today:</p>"
     @html += apply_button
-    @html += "It takes just a minute! Plus, add a <i>Job Alert</i> and get notified whenever #{@posting.company_name} and many other great employers are hiring. Thank you for your interest!</p>"
+    @html += "<p>It takes just a minute! Plus, add a <i>Job Alert</i> and get notified whenever #{@posting.company_name} and many other great employers are hiring. Thank you for your interest!</p>"
     @html_render = @html.html_safe
   end
 

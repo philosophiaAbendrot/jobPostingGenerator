@@ -1,3 +1,21 @@
-// Place all the styles related to the Postings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.craigslist-preview{
+  font-family: "Times New Roman", serif;
+  color: #222;
+
+  h3{
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  p{
+    font-size: 19px;
+    font-family: "Times New Roman", serif;
+  }
+
+  ul{
+    font-family: "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.1;
+  }
+}
