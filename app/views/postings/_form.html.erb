@@ -1,64 +1,62 @@
 <%= form_with(model: posting, local: true, class: 'form-group') do |form| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 offset-lg-2 offset-md-1">
-      <% if posting.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(posting.errors.count, "error") %> prohibited this posting from being saved:</h2>
+  <div class="col-sm-12 col-md-10 col-lg-8 offset-lg-2 offset-md-1">
+    <% if posting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(posting.errors.count, "error") %> prohibited this posting from being saved:</h2>
 
-        <ul>
-          <% posting.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-      <h2>Primary Fields</h2>
-      <div class="field">
-        <%= form.label :company_name %>
-        <%= form.text_field :company_name, class: 'form-control' %>
-      </div>
+      <ul>
+        <% posting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <h2>Primary Fields</h2>
+    <div class="field">
+      <%= form.label :company_name %>
+      <%= form.text_field :company_name, class: 'form-control' %>
+    </div>
 
-      <div class="field">
-        <%= form.label :position_name %>
-        <%= form.text_field :position_name, class: 'form-control' %>
-      </div>
+    <div class="field">
+      <%= form.label :position_name %>
+      <%= form.text_field :position_name, class: 'form-control' %>
+    </div>
 
-      <div class="field">
-        <%= form.label :link, 'Job Posting Link' %>
-        <%= form.text_field :link, class: 'form-control' %>
-      </div>
+    <div class="field">
+      <%= form.label :link, 'Job Posting Link' %>
+      <%= form.text_field :link, class: 'form-control' %>
+    </div>
 
-      <div class="field">
-        <%= form.text_field :summary_name, class: 'form-control', value: 'Job Description' %>
-      </div>
+    <div class="field">
+      <%= form.text_field :summary_name, class: 'form-control', value: 'Job Description' %>
+    </div>
 
-      <div class="field">
-        <%= form.text_area :summary, class: 'form-control' %>
-      </div>
+    <div class="field">
+      <%= form.text_area :summary, class: 'form-control' %>
+    </div>
 
-      <h2>Optional Fields</h2>
+    <h2>Optional Fields</h2>
 
-      <div class="field">
-        <%= form.text_field :duties_name, class: 'form-control', value: 'Job Duties' %>
-      </div>
+    <div class="field">
+      <%= form.text_field :duties_name, class: 'form-control', value: 'Job Duties' %>
+    </div>
 
-      <div class="field">
-        <%= form.text_area :duties, class: 'form-control' %>
-      </div>
+    <div class="field">
+      <%= form.text_area :duties, class: 'form-control' %>
+    </div>
 
-      <div class="field">
-        <%= form.text_field :qualifications_name, class: 'form-control', value: 'Required Qualifications' %>
-      </div>
+    <div class="field">
+      <%= form.text_field :qualifications_name, class: 'form-control', value: 'Required Qualifications' %>
+    </div>
 
-      <div class="field">
-        <%= form.text_area :qualifications, class: 'form-control' %>
-      </div>
-
+    <div class="field">
+      <%= form.text_area :qualifications, class: 'form-control' %>
+    </div>
 
 
-      <div class="actions">
-        <%= form.submit class: 'btn btn-primary' %>
-      </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>
