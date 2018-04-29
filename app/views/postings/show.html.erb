@@ -1,6 +1,9 @@
+<h1>Show Posting</h1>
 <div class="row">
-  <%= link_to 'Edit', edit_posting_path(@posting), class: 'btn btn-primary' %>
-  <%= link_to 'Back', postings_path, class: 'btn btn-primary'%>
+  <div class="btn-group">
+    <%= link_to 'Edit', edit_posting_path(@posting), class: 'btn btn-secondary btn-sm' %>
+    <%= link_to 'Back', postings_path, class: 'btn btn-secondary btn-sm'%>
+  </div>
 </div>
 <div class="row">
   <div class="col" class="col-sm-12">

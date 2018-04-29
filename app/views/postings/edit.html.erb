@@ -1,6 +1,7 @@
 <h1>Editing Posting</h1>
+<div class="btn-group">
+  <%= link_to 'Show', @posting, class: 'btn btn-secondary btn-sm' %>
+  <%= link_to 'Back', postings_path, class: 'btn btn-secondary btn-sm' %>
+</div>
 
 <%= render 'form', posting: @posting %>
-
-<%= link_to 'Show', @posting %> |
-<%= link_to 'Back', postings_path %>
