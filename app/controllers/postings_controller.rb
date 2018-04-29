@@ -4,7 +4,7 @@ class PostingsController < ApplicationController
   # GET /postings
   # GET /postings.json
   def index
-    @postings = Posting.all
+    @postings = Posting.all.order(created_at: :desc)
   end
 
   # GET /postings/1
