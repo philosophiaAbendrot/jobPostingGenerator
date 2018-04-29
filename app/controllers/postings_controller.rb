@@ -33,9 +33,14 @@ class PostingsController < ApplicationController
 
     @html = heading
     @html += job_summary
-    @html += apply_button
-    @html += job_duties
-    @html += qualifications
+    # if the user entered job duties
+    if job_duties_array.length > 0
+      @html += job_duties
+    end
+    # if the user entered qualifications
+    if qualification_array.length > 0
+      @html += qualifications
+    end
     @html += "<p>Please apply with your resume and profile via #{@posting.company_name} <b><i><br>"
     @html += "one minute online application</i></b> today:</p>"
     @html += apply_button
