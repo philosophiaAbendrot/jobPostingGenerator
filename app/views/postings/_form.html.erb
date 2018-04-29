@@ -12,7 +12,7 @@
         </ul>
       </div>
       <% end %>
-
+      <h2>Primary Fields</h2>
       <div class="field">
         <%= form.label :company_name %>
         <%= form.text_field :company_name, class: 'form-control' %>
@@ -24,39 +24,37 @@
       </div>
 
       <div class="field">
-        <%= form.label :link %>
-        <%= form.text_area :link, class: 'form-control' %>
+        <%= form.label :link, 'Job Posting Link' %>
+        <%= form.text_field :link, class: 'form-control' %>
       </div>
 
       <div class="field">
-        <%= form.label :summary %>
+        <%= form.text_field :summary_name, class: 'form-control', value: 'Job Description' %>
+      </div>
+
+      <div class="field">
         <%= form.text_area :summary, class: 'form-control' %>
       </div>
 
+      <h2>Optional Fields</h2>
+
       <div class="field">
-        <%= form.label :summary_name %>
-        <%= form.text_field :summary_name, class: 'form-control' %>
+        <%= form.text_field :duties_name, class: 'form-control', value: 'Job Duties' %>
       </div>
 
       <div class="field">
-        <%= form.label :qualifications %>
-        <%= form.text_area :qualifications, class: 'form-control' %>
-      </div>
-
-      <div class="field">
-        <%= form.label :qualifications_name %>
-        <%= form.text_field :qualifications_name, class: 'form-control' %>
-      </div>
-
-      <div class="field">
-        <%= form.label :duties %>
         <%= form.text_area :duties, class: 'form-control' %>
       </div>
 
       <div class="field">
-        <%= form.label :duties_name %>
-        <%= form.text_field :duties_name, class: 'form-control' %>
+        <%= form.text_field :qualifications_name, class: 'form-control', value: 'Required Qualifications' %>
       </div>
+
+      <div class="field">
+        <%= form.text_area :qualifications, class: 'form-control' %>
+      </div>
+
+
 
       <div class="actions">
         <%= form.submit class: 'btn btn-primary' %>

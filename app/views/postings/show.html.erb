@@ -1,49 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col" class="col-sm-12">
+    <h3>Preview</h3>
+    <%= @html_render %>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @posting.company_name %>
-</p>
-
-<p>
-  <strong>Position name:</strong>
-  <%= @posting.position_name %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @posting.link %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @posting.summary %>
-</p>
-
-<p>
-  <strong>Summary name:</strong>
-  <%= @posting.summary_name %>
-</p>
-
-<p>
-  <strong>Qualifications:</strong>
-  <%= @posting.qualifications %>
-</p>
-
-<p>
-  <strong>Qualifications name:</strong>
-  <%= @posting.qualifications_name %>
-</p>
-
-<p>
-  <strong>Duties:</strong>
-  <%= @posting.duties %>
-</p>
-
-<p>
-  <strong>Duties name:</strong>
-  <%= @posting.duties_name %>
-</p>
-
-<%= link_to 'Edit', edit_posting_path(@posting) %> |
-<%= link_to 'Back', postings_path %>
+    <h3>Html code:</h3>
+    <p>
+      <%= @html %>
+    </p>
+  </div>
+  <div class="row">
+    <%= link_to 'Edit', edit_posting_path(@posting) %> |
+    <%= link_to 'Back', postings_path %>
+  </div>
+</div>

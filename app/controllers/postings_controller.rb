@@ -10,20 +10,21 @@ class PostingsController < ApplicationController
   # GET /postings/1
   # GET /postings/1.json
   def show
-    heading = "<h3>Company Name is hiring a #{@posting.position_name}.</h3>"
+    heading = "<h3>#{@posting.company_name} is hiring a #{@posting.position_name}.</h3>"
     apply_button = "<center><a href=\"#{@posting.link}\" rel=\"nofollow\"><img src=\"https://i.imgur.com/3iDKGJb.png\"/></a></center><br><br>"
     # job summary
-    job_summary = "<h3>Job Description</h3><p>#{@posting.summary}</p>"
+    job_summary = "<h3>#{@posting.summary_name}</h3><p>#{@posting.summary}</p>"
 
     # job duties
-    job_duties = "<h3>Essential Duties and Responsibilities</h3><ul>"
+
+    job_duties = "<h3>#{@posting.duties_name}</h3><ul>"
     job_duties_array = @posting.duties.split('-').drop(1)
     job_duties_array.each do |duty|
       job_duties += "<li>#{duty}</li>"
     end
     job_duties += "</ul>"
     # qualifications heading
-    qualifications = "<h3>Required Experience and Qualifications</h3><ul>"
+    qualifications = "<h3>#{@posting.qualifications_name}</h3><ul>"
     qualification_array = @posting.qualifications.split('-').drop(1)
     qualification_array.each do |qualification|
       qualifications += "<li>#{qualification}</li>"
@@ -35,10 +36,10 @@ class PostingsController < ApplicationController
     @html += apply_button
     @html += job_duties
     @html += qualifications
-    @html += "<p>Please apply with your resume and profile via Company Name <b><i><br>"
+    @html += "<p>Please apply with your resume and profile via #{@posting.company_name} <b><i><br>"
     @html += "one minute online application</i></b> today:</p>"
     @html += apply_button
-    @html += "It takes just a minute! Plus, add a <i>Job Alert</i> and get notified whenever COMPANYNAME and many other great employers are hiring. Thank you for your interest!</p>"
+    @html += "It takes just a minute! Plus, add a <i>Job Alert</i> and get notified whenever #{@posting.company_name} and many other great employers are hiring. Thank you for your interest!</p>"
     @html_render = @html.html_safe
   end
 
