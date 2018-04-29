@@ -1,3 +1,11 @@
 @import 'bootstrap';
 @import 'postings';
 @import 'scaffolds';
+
+table{
+  font-size: 11px;
+
+  td, th{
+    padding: 20px;
+  }
+}
