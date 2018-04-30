@@ -18,12 +18,14 @@ class PostingsController < ApplicationController
     job_duties = generate_html(@posting.radio_duties, @posting.duties, @posting.duties_name)
     qualifications = generate_html(@posting.radio_qualifications, @posting.qualifications, @posting.qualifications_name)
     additional_comments = generate_html(@posting.radio_additional_comments, @posting.additional_comments, @posting.additional_comments_name)
+    last_section = generate_html(@posting.radio_last_section, @posting.last_section, @posting.last_section_name)
 
     @html = heading
     @html += job_summary
     @html += job_duties
     @html += qualifications
     @html += additional_comments
+    @html += last_section
     @html += "<p>Please apply with your resume and profile via #{@posting.company_name}'s <b><i>"
     @html += "one minute online application</i></b> today:</p>"
     @html += apply_button

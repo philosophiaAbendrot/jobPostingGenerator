@@ -36,9 +36,16 @@
       <%= form.text_area :summary, class: 'form-control', placeholder: 'Please do not enter point form here' %>
     </div>
 
+    <div class="actions">
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+
     <h2>Optional Information</h2>
 
+    <hr>
+
     <div class="field">
+      <%= form.label :duties_name, 'Additional Section 1' %>
       <%= form.text_field :duties_name, class: 'form-control', placeholder: 'Optional title' %>
     </div>
 
@@ -60,7 +67,10 @@
       <%= form.text_area :duties, class: 'form-control' %>
     </div>
 
+    <hr>
+
     <div class="field">
+      <%= form.label :qualifications_name, 'Additional Section 2' %>
       <%= form.text_field :qualifications_name, class: 'form-control', placeholder: 'Optional title' %>
     </div>
 
@@ -82,7 +92,10 @@
       <%= form.text_area :qualifications, class: 'form-control' %>
     </div>
 
+    <hr>
+
     <div class="field">
+      <%= form.label :additional_comments_name, 'Additional Section 3' %>
       <%= form.text_field :additional_comments_name, class: 'form-control', placeholder: 'Optional title' %>
     </div>
 
@@ -102,6 +115,30 @@
 
     <div class="field">
       <%= form.text_area :additional_comments, class: 'form-control', placeholder: 'Please do not enter point form' %>
+    </div>
+
+    <hr>
+    <div class="field">
+      <%= form.label :last_section_name, 'Additional Section 4' %>
+      <%= form.text_field :last_section_name, class: 'form-control', placeholder: 'Optional title' %>
+    </div>
+
+    <div class="field">
+      <div class="row">
+        <div class="col-3">
+          <%= form.label :radio_last_section, 'Paragraphs' %>
+          <%= form.radio_button :radio_last_section, 'paragraphs' %>
+        </div>
+
+        <div class="col-3">
+          <%= form.label :radio_last_section, 'Point-form' %>
+          <%= form.radio_button :radio_last_section, 'point-form', :checked => 'checked' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.text_area :last_section, class: 'form-control', placeholder: 'Please do not enter point form' %>
     </div>
 
     <div class="actions">
