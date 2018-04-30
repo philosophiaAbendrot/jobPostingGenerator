@@ -11,7 +11,7 @@
       </ul>
     </div>
     <% end %>
-    <h2>Primary Fields</h2>
+    <h2>Primary Information</h2>
     <div class="field">
       <%= form.label :company_name %>
       <%= form.text_field :company_name, class: 'form-control' %>
@@ -36,10 +36,24 @@
       <%= form.text_area :summary, class: 'form-control', placeholder: 'Please do not enter point form here' %>
     </div>
 
-    <h2>Optional Point-Form Lists</h2>
+    <h2>Optional Information</h2>
 
     <div class="field">
       <%= form.text_field :duties_name, class: 'form-control', placeholder: 'Optional title' %>
+    </div>
+
+    <div class="field">
+      <div class="row">
+        <div class="col-3">
+          <%= form.label :radio_duties, 'Paragraphs' %>
+          <%= form.radio_button :radio_duties, 'paragraphs' %>
+        </div>
+
+        <div class="col-3">
+          <%= form.label :radio_duties, 'Point-form' %>
+          <%= form.radio_button :radio_duties, 'point-form' %>
+        </div>
+      </div>
     </div>
 
     <div class="field">
@@ -51,13 +65,39 @@
     </div>
 
     <div class="field">
+      <div class="row">
+        <div class="col-3">
+          <%= form.label :radio_qualifications, 'Paragraphs' %>
+          <%= form.radio_button :radio_qualifications, 'paragraphs' %>
+        </div>
+
+        <div class="col-3">
+          <%= form.label :radio_qualifications, 'Point-form' %>
+          <%= form.radio_button :radio_qualifications, 'point-form' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
       <%= form.text_area :qualifications, class: 'form-control' %>
     </div>
 
-    <h2>Additional Comments (paragraph form)</h2>
-
     <div class="field">
       <%= form.text_field :additional_comments_name, class: 'form-control', placeholder: 'Optional title' %>
+    </div>
+
+    <div class="field">
+      <div class="row">
+        <div class="col-3">
+          <%= form.label :radio_additional_comments, 'Paragraphs' %>
+          <%= form.radio_button :radio_additional_comments, 'paragraphs' %>
+        </div>
+
+        <div class="col-3">
+          <%= form.label :radio_additional_comments, 'Point-form' %>
+          <%= form.radio_button :radio_additional_comments, 'point-form' %>
+        </div>
+      </div>
     </div>
 
     <div class="field">
