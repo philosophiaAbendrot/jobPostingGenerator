@@ -15,47 +15,79 @@ class PostingsController < ApplicationController
     # job summary
     job_summary = "<h3>#{@posting.summary_name}</h3><p>#{@posting.summary}</p>"
 
-    # job duties
-    job_duties = "<h3>#{@posting.duties_name}</h3><ul>"
-    # line is split when it runs into a dot followed by a space or a hyphen followed by a space
-    job_duties_array = @posting.duties.split(/^•|^-/).drop(1)
-    job_duties_array.each do |duty|
-      job_duties += "<li>#{duty}</li>"
-    end
-    job_duties += "</ul>"
-    # qualifications heading
-    qualifications = "<h3>#{@posting.qualifications_name}</h3><ul>"
-    qualification_array = @posting.qualifications.split(/^•|^-/).drop(1)
-    qualification_array.each do |qualification|
-      qualifications += "<li>#{qualification}</li>"
-    end
-    qualifications += "</ul>"
+    job_duties = ""
+    qualifications = ""
+    additional_comments = ""
 
-    # additional comments
-    additional_comments = "<h3>#{@posting.additional_comments_name}</h3><p>#{@posting.additional_comments}</p>"
+    # if duties were filled out
+    if @posting.duties.length > 0
+      job_duties += "<h3>#{@posting.duties_name}</h3>"
+
+      if @posting.radio_duties == 'point-form'
+        # if duties are point form
+        # job duties
+        job_duties += "<ul>"
+        # line is split when it runs into a dot followed by a space or a hyphen followed by a space
+        job_duties_array = @posting.duties.split(/^•|^-|^/).drop(1)
+
+        job_duties_array.each do |duty|
+          job_duties += "<li>#{duty}</li>"
+        end
+
+        job_duties += "</ul>"
+      elsif @posting.radio_duties == 'paragraphs'
+        # if duties are paragraph form
+        job_duties += "<p>#{@posting.duties}</p>"
+      end
+    end
+
+    # if qualifications were filled out
+    if @posting.qualifications.length > 0
+      qualifications = "<h3>#{@posting.qualifications_name}</h3>"
+      if @posting.radio_qualifications == 'point-form'
+        qualifications += "<ul>"
+        qualification_array = @posting.qualifications.split(/^•|^-|^/).drop(1)
+
+        qualification_array.each do |qualification|
+          qualifications += "<li>#{qualification}</li>"
+        end
+
+        qualifications += "</ul>"
+      elsif @posting.radio_qualifications == 'paragraphs'
+        # if qualifications are in paragraph form
+        qualifications += "<p>#{@posting.qualifications}</p>"
+      end
+    end
+
+    # if additional comments were filled out
+    if @posting.additional_comments.length > 0
+      additional_comments = "<h3>#{@posting.additional_comments_name}</h3>"
+      if @posting.radio_additional_comments == 'point-form'
+        additional_comments += "<ul>"
+        additional_comments_array = @posting.additional_comments.split(/^•|^-|^/).drop(1)
+
+        additional_comments_array.each do |additional_comment|
+          additional_comments += "<li>#{additional_comment}</li>"
+        end
+
+        additional_comments += "</ul>"
+      elsif @posting.radio_additional_comments == 'paragraphs'
+        # if additional_comments are in paragraph form
+        additional_comments += "<p>#{@posting.additional_comments}</p>"
+      end
+    end
 
     @html = heading
     @html += job_summary
-    # if the user entered job duties
-    if job_duties_array.length > 0
-      @html += job_duties
-    end
-    # if the user entered qualifications
-    if qualification_array.length > 0
-      @html += qualifications
-    end
-
-    # if the user entered additional comments
-    if @posting.additional_comments.length > 0
-      @html += additional_comments
-    end
-
+    @html += job_duties
+    @html += qualifications
+    @html += additional_comments
     @html += "<p>Please apply with your resume and profile via #{@posting.company_name}'s <b><i>"
     @html += "one minute online application</i></b> today:</p>"
     @html += apply_button
     @html += "<p>It takes just a minute! Plus, add a <i>Job Alert</i> and get notified whenever #{@posting.company_name} and many other great employers are hiring. Thank you for your interest!</p>"
     @html_render = @html.html_safe
-  end
+  end #end show
 
   # GET /postings/new
   def new
