@@ -10,7 +10,7 @@ class PostingsController < ApplicationController
   # GET /postings/1
   # GET /postings/1.json
   def show
-    heading = "<h3>#{@posting.company_name} is hiring a #{@posting.position_name}.</h3>"
+    heading = "<h3>#{@posting.company_name} is hiring #{@posting.position_name}.</h3>"
     apply_button = "<center><a href=\"#{@posting.link}\" rel=\"nofollow\"><img src=\"https://i.imgur.com/3iDKGJb.png\"/></a></center><br><br>"
     # job summary
     job_summary = "<h3>#{@posting.summary_name}</h3><p>#{@posting.summary}</p>"
