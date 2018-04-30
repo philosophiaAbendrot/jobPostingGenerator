@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_30_153138) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 2018_04_28_232956) do
 
   create_table "postings", force: :cascade do |t|
     t.string "company_name"
@@ -25,9 +22,10 @@ ActiveRecord::Schema.define(version: 2018_04_30_153138) do
     t.string "qualifications_name"
     t.text "duties"
     t.string "duties_name"
+    t.string "additional_comments_name"
+    t.text "additional_comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "additional_comments"
   end
 
 end

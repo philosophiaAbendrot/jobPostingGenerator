@@ -10,7 +10,8 @@ class CreatePostings < ActiveRecord::Migration[5.2]
       t.string :qualifications_name
       t.text :duties
       t.string :duties_name
-
+      t.string :additional_comments_name
+      t.text :additional_comments
       t.timestamps
     end
   end

@@ -31,6 +31,9 @@ class PostingsController < ApplicationController
     end
     qualifications += "</ul>"
 
+    # additional comments
+    additional_comments = "<h3>#{@posting.additional_comments_name}</h3><p>#{@posting.additional_comments}</p>"
+
     @html = heading
     @html += job_summary
     # if the user entered job duties
@@ -41,6 +44,9 @@ class PostingsController < ApplicationController
     if qualification_array.length > 0
       @html += qualifications
     end
+
+    # if the user entered additional comments
+
     @html += "<p>Please apply with your resume and profile via #{@posting.company_name}'s <b><i>"
     @html += "one minute online application</i></b> today:</p>"
     @html += apply_button
