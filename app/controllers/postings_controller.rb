@@ -46,6 +46,9 @@ class PostingsController < ApplicationController
     end
 
     # if the user entered additional comments
+    if @posting.additional_comments.length > 0
+      @html += additional_comments
+    end
 
     @html += "<p>Please apply with your resume and profile via #{@posting.company_name}'s <b><i>"
     @html += "one minute online application</i></b> today:</p>"
@@ -111,6 +114,6 @@ class PostingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
-      params.require(:posting).permit(:company_name, :position_name, :link, :summary, :summary_name, :qualifications, :qualifications_name, :duties, :duties_name)
+      params.require(:posting).permit(:company_name, :position_name, :link, :summary, :summary_name, :qualifications, :qualifications_name, :duties, :duties_name, :additional_comments, :additional_comments_name)
     end
 end
