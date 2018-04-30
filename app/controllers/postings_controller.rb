@@ -16,16 +16,16 @@ class PostingsController < ApplicationController
     job_summary = "<h3>#{@posting.summary_name}</h3><p>#{@posting.summary}</p>"
 
     # job duties
-
     job_duties = "<h3>#{@posting.duties_name}</h3><ul>"
-    job_duties_array = @posting.duties.split('-').drop(1)
+    # line is split when it runs into a dot followed by a space or a hyphen followed by a space
+    job_duties_array = @posting.duties.split(/^•|^-/).drop(1)
     job_duties_array.each do |duty|
       job_duties += "<li>#{duty}</li>"
     end
     job_duties += "</ul>"
     # qualifications heading
     qualifications = "<h3>#{@posting.qualifications_name}</h3><ul>"
-    qualification_array = @posting.qualifications.split('-').drop(1)
+    qualification_array = @posting.qualifications.split(/^•|^-/).drop(1)
     qualification_array.each do |qualification|
       qualifications += "<li>#{qualification}</li>"
     end
