@@ -114,6 +114,6 @@ class PostingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
-      params.require(:posting).permit(:company_name, :position_name, :link, :summary, :summary_name, :qualifications, :qualifications_name, :duties, :duties_name, :additional_comments, :additional_comments_name)
+      params.require(:posting).permit(:company_name, :position_name, :link, :summary, :summary_name, :qualifications, :qualifications_name, :duties, :duties_name, :additional_comments, :additional_comments_name, :radio_duties, :radio_summary, :radio_qualifications, :radio_additional_comments)
     end
 end
