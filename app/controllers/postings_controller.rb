@@ -104,7 +104,8 @@ class PostingsController < ApplicationController
           # if point form was selected
           markup += "<ul>"
           # split strings
-          point_form_array = text.split(/^•|^-|^/).drop(1)
+          point_form_array = text.split(/^•|^-|^/)
+          point_form_array.reject!{ |item| item.nil? || item == '' }
 
           point_form_array.each do |point_form|
             markup += "<li>#{point_form}</li>"
