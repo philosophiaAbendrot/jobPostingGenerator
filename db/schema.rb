@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_30_183356) do
+ActiveRecord::Schema.define(version: 2018_04_30_193249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 2018_04_30_183356) do
     t.string "radio_duties"
     t.string "radio_qualifications"
     t.string "radio_additional_comments"
+    t.string "radio_last_section"
+    t.text "last_section"
+    t.string "last_section_name"
   end
 
 end
