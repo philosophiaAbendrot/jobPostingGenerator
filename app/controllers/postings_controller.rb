@@ -11,7 +11,7 @@ class PostingsController < ApplicationController
   # GET /postings/1.json
   def show
     heading = "<h3>#{@posting.company_name} is hiring #{@posting.position_name}.</h3>"
-    apply_button = "<center><a href=\"#{@posting.link}\" rel=\"nofollow\"><img src=\"https://i.imgur.com/3iDKGJb.png\"/></a></center><br><br>"
+    apply_button = "<a href=\"#{@posting.link}\" rel=\"nofollow\"><img src='https://i.imgur.com/eNHwjtX.png'/></a><br><br>"
     # job summary
     job_summary = "<h3>#{@posting.summary_name}</h3><p>#{@posting.summary}</p>"
 
@@ -27,9 +27,10 @@ class PostingsController < ApplicationController
     @html += additional_comments
     @html += last_section
     @html += "<p>Please apply with your resume and profile via #{@posting.company_name}'s <b><i>"
-    @html += "one minute online application</i></b> today:</p>"
+    @html += "one minute application</i></b> today:</p>"
     @html += apply_button
-    @html += "<p>It takes just a minute! Plus, add a <i>Job Alert</i> and get notified whenever #{@posting.company_name} and many other great employers are hiring. Thank you for your interest!</p>"
+    @html += "<p>Take control of your hospitality career with your professional EightSix Profile: stand out from the competition, track your profile views, and get alerted to opportunities by #{@posting.company_name} and many other great employers as they become available. EightSix empowers you to showcase your talents and get hired for what you bring to the table.</p>"
+    @html += "<p>The best employers meet their top candidates on <b>EightSix Network - The Industry's professional employment network.</i> Join today.</p>"
     @html_render = @html.html_safe
   end #end show
 
